@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Regression Visualizer</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Regression Visualizer</h1>
+
+      <select id="regressionSelect">
+        <option value="linear">Linear Regression (Linear Fit)</option>
+        <option value="polynomial">Polynomial Regression (Curve Fit)</option>
+        <option value="logistic">Logistic Regression (Sigmoid Curve)</option>
+        <option value="knn">K-Nearest Neighbors (Classification)</option>
+      </select>
+
+      <button onclick="loadData()">Show Model</button>
+
+      <p id="description"></p>
+
+      <canvas id="regressionChart" width="600" height="400"></canvas>
+
+      <h2>Model Performance</h2>
+      <ul id="metrics"></ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
